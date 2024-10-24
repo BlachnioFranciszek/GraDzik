@@ -7,7 +7,10 @@ const scoreElement = document.getElementById("score");
 const czasReakcjiP = document.getElementById("czasReakcji");
 const sredniCzasReakcjiP = document.getElementById("sredniCzasReakcji");
 const listaTrudnosci = document.getElementById("listaWybierana");
-const startbutton=document.getElementById("start") 
+const startbutton=document.getElementById("start");
+const stopbutton=document.getElementById("stop");
+const img = document.getElementById('boar');
+var interwalCzasowy;
 var started=false;
 var startTime = performance.now();
 var czasReakcji = new Array(0, 0);
@@ -46,14 +49,26 @@ function updateNumber() {
 }
 
 
+stopbutton.addEventListener("click",()=> {
+    clearInterval(interwalCzasowy);
+    started = false;
+    img.style.filter = 'brightness(1) saturate(1) contrast(1) hue-rotate(30deg)';
+    document.body.style.backgroundColor='rgb(239, 243, 189)';
+    scoreElement.textContent=0;
+    scoreElement.style.color = "gray";
+    czasReakcjiP.textContent='';
+    sredniCzasReakcjiP.textContent='';
+    czasReakcji[0] = 0;
+    last=-1;
+    score = 0;
+    number = 0;
+}  
+)
 
 
 startbutton.addEventListener("click",()=> {
     if (started==false)
     {
-        czasReakcji[0] = 0;
-        last=-1;
-        score = 0;
         switch (listaTrudnosci.value)
         {
             case '1':
@@ -63,25 +78,30 @@ startbutton.addEventListener("click",()=> {
             case "2":
                 interwal = 500;
                 document.body.style.backgroundColor='yellow';
+                img.style.filter = 'brightness(1) saturate(0.3) contrast(1) hue-rotate(30deg)';
                 break;
             case "3":
                 interwal = 250;
                 document.body.style.backgroundColor='orange';
+                img.style.filter = 'brightness(1) saturate(0.5) contrast(2.3) hue-rotate(30deg)';
                 break;
             case "4":
                 interwal = 300;
                 document.body.style.backgroundColor='red';
+                img.style.filter = 'brightness(1) saturate(1.5) contrast(3.3) hue-rotate(30deg)';
                 break;
+                
             case "5":
-                document.body.style.backgroundColor='purple';
-                interwal = Math.floor(Math.random()*300+200)
+                document.body.style.backgroundColor='rgb(80, 2, 80)';
+                interwal = Math.floor(Math.random()*300+200);
+
+                img.style.filter = 'brightness(0.8) saturate(1.5) contrast(5.3) hue-rotate(30deg)';
                 break;
+        }
         }
         started=true;
-        var interwalCzasowy = setInterval(updateNumber, interwal);
-
+        interwalCzasowy = setInterval(updateNumber, interwal);
         }
-}
 )
 
 boar.addEventListener("click", () => {
