@@ -8,6 +8,7 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
+            background-color: rgb(192, 252, 252);
         }
         img {
             width: 200px;
@@ -19,19 +20,39 @@
             color: chocolate;
             
         }
-        #score {
+        #scoreTekst {
             font-size: 3em;
             margin: 20px;
-            color: greenyellow;
+            color: black;
         }
+        #czas {
+            font-size: 1.5vw;
+
+        }
+        #sredniCzasReakcji, #czasReakcji {
+            font-weight: bold;
+        }
+        
     </style>
 </head>
 <body>
     <h1>Gra w Dzika</h1>
+    <select id="listaWybierana">
+        <option value="1">Łatwy (1s na reakcję)</option>
+        <option value="2">Średni (0.5s na reakcję)</option>
+        <option value="3">Trudny (0.25s na reakcję)</option>
+        <option value="4">Ekspert (losowe liczby i 0.3s na reakcję)</option>
+        <option value="5">Super ekspert (losowe liczby i losowy czas na reakcję)</option>
+    </select>
+
     <p>Kliknij w dzika, jeśli liczba jest podzielna przez 7 lub zawiera cyfrę 7</p>
     <div id="number">1</div>
-    <div id="score">0</div>
+    <div id="scoreTekst">Punkty: <span style="color: gray;" id="score">0</span></div>
+
     <img id="boar" src="./dzik-g25.jpg" alt="Dzik">
+    <div id="czas">Czas reakcji: <span id="czasReakcji"></span></div>
+    <div id="czas">Średni czas reakcji: <span id="sredniCzasReakcji"></span></div>
     <script src="script.js"></script>
+
 </body>
 </html>
