@@ -23,7 +23,7 @@
         #number {
             font-size: 4em;
             margin: 20px;
-            color: chocolate;
+            color: rgb(65, 45, 45);
             
         }
         #scoreTekst {
@@ -40,16 +40,25 @@
         }
         div,h1,p {
             box-shadow: 0 0px 20px 3px rgba(0, 0, 0, 0.36);
+            background-color: rgba(255, 255, 255, 0.26);
 
             width: fit-content;
+            height: fit-content;
             justify-content: center;
             border-radius: 15px;
         }
+        div select,button
+        {
+            height: 3vh;
+            margin: 0.4vw;
+        }
+
+    
     </style>
 </head>
 <body>
     <h1>Gra w Dzika</h1>
-    <div>
+    <div id="starter">
     <select id="listaWybierana">
         <option value="1">Łatwy (1s na reakcję)</option>
         <option value="2">Średni (0.5s na reakcję)</option>

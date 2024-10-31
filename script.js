@@ -82,25 +82,26 @@ startbutton.addEventListener("click",()=> {
                 break;
             case "3":
                 interwal = 250;
-                document.body.style.backgroundColor='orange';
+                document.body.style.backgroundColor='rgb(255, 51, 0)';
                 img.style.filter = 'brightness(1) saturate(0.5) contrast(2.3) hue-rotate(30deg)';
                 break;
             case "4":
                 interwal = 300;
-                document.body.style.backgroundColor='red';
+                document.body.style.backgroundColor='rgb(80, 2, 80)';
                 img.style.filter = 'brightness(1) saturate(1.5) contrast(3.3) hue-rotate(30deg)';
                 break;
                 
             case "5":
-                document.body.style.backgroundColor='rgb(80, 2, 80)';
+                document.body.style.backgroundColor='rgb(0, 0, 0)';
                 interwal = Math.floor(Math.random()*300+200);
 
                 img.style.filter = 'brightness(0.8) saturate(1.5) contrast(5.3) hue-rotate(30deg)';
                 break;
         }
-        }
         started=true;
         interwalCzasowy = setInterval(updateNumber, interwal);
+        }
+        
         }
 )
 
